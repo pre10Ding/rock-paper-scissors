@@ -1,21 +1,39 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <title>Rock, Paper, Scissors!</title>
-  <meta charset="UTF-8"/>
+  <meta charset="UTF-8" />
   <link rel="stylesheet" href="reset.css">
   <link rel="stylesheet" href="main.css">
 
 </head>
+
 <body>
 
   <h1>Rock, Paper, Scissors!</h1>
   <div id=score>
-    Wins: <div id=win-counter>0</div> 
+    Wins: <div id=win-counter>0</div>
     Losses: <div id=loss-counter>0</div>
   </div>
   <button id=start onclick="game()">START</button>
-  
+
+  <div id=game-area>
+
+    <div id=left-side-area class="half-areas">
+      <div id=interactive-button>CHOOSE!</div>
+      <div id=cpu-panel class="main-panel">???</div>
+      <span id=cpu-label>CPU</span>
+    </div>
+    <div id=right-side-area class="half-areas">
+      <div id=choice-top class="player-panel">rock</div>
+      <div id=choice-mid class="player-panel">paper</div>
+      <div id=choice-bot class="player-panel">scissors</div>
+    </div>
+  </div>
+
+
   <script src="main.js"></script>
 </body>
+
 </html>
