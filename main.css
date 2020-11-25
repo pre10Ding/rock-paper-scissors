@@ -47,6 +47,12 @@
     height: 75px;
     width: 75px;
     margin: 20px 20px 20px 20px;
+    background:black;
+}
+
+.player-panel:hover {
+    border: 1px solid;
+    box-shadow: 5px 10px 18px green;
 }
 
 /*transitional classes to be used with JS when clicked on*/
@@ -55,25 +61,26 @@
     order:1;
     height: 75px;
     width: 75px;
-    transition: all 1s;
+    transition: all .2s;
 }
 .bottom-panel {
     order:3;
     height: 75px;
     width: 75px;
-    transition: all 1s;
+    transition: all .2s;
 }
 
 .chosen-panel {
     width: 100%;
     height:300px;
     order: 2;
-    transition: all 1s;
+    transition: all .2s;
 
 }
 
 
+
 /*some borders for debugging*/
-.half-areas div{
+.half-areas *{
     border: solid green;
 }

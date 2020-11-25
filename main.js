@@ -11,14 +11,32 @@
 let playerSelection="";
 
 let listOfSelection = document.querySelectorAll('.player-panel');
-listOfSelection.forEach((selected)=>selected.addEventListener('click',highlightChoice));
+listOfSelection.forEach((selected)=>selected.addEventListener('click',handleChoice));
 
 
-function highlightChoice(e) {
+function handleChoice(e) {
 
   //remember the player choice
   playerSelection = e.path[0].id;
+  
+  highlightChoice(e);
+  
+  let computerSelection = computerPlay();
+
+  displayComputerChoice(computerSelection);
+
+  //tie=0, player win=1, cpu win=2
+  let result = playRound(playerSelection,computerSelection);
+
+  console.log(result);
+
+  return 0;
+}
+
+//makes the player selected hand bigger to match the CPU select panel
+function highlightChoice(e) {
   let refOfChosen = document.querySelector(`#${playerSelection}`);
+
 
   //erase all previous CSS changes
   listOfSelection.forEach((el) => el.classList.remove(el.classList[1])); //pop the second class
@@ -44,6 +62,13 @@ function highlightChoice(e) {
   return 0;
 }
 
+//updates the CPU panel with the hand that CPU chose
+function displayComputerChoice(computerSelection){
+
+
+
+  return 0;
+}
 
 let winCount = 0;
 let lossCount = 0;
@@ -53,13 +78,13 @@ function computerPlay() {
   let randInt = Math.floor(Math.random() * 3);
   switch (randInt) {
     case 0:
-      return "Rock";
+      return "rock";
       break;
     case 1:
-      return "Paper";
+      return "paper";
       break;
     case 2:
-      return "Scissors";
+      return "scissors";
       break;
   }
 }
@@ -80,6 +105,7 @@ function playRound(playerSelection, computerSelection) {
     return 1;
   }
 
+  //cpu win
   else {
     return 2;
 
