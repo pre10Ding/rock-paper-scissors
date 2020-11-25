@@ -5,11 +5,75 @@
 }
 
 #start {
+    display:flex;
     font-size: 30px;
     color:white;
     background-color: green;
 }
 
 #game-area {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap:10px;
+    width:600px;
+    margin: 0 auto 0 auto;
+    border: solid black;
+}
+
+.half-areas div{
+    margin:20px 0 20px 0;
+}
+
+#left-side-area {
+    display:grid;
+    grid-template-rows:100px 350px 100px;
+}
+
+#cpu-panel {
+    position: relative;
+    bottom:-21px;
+    width:100%;
+    height: 300px;
+}
+
+#right-side-area {
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+    justify-content: center;
+}
+
+.player-panel {
+    height: 75px;
+    width: 75px;
+    margin: 20px 20px 20px 20px;
+}
+
+/*transitional classes to be used with JS when clicked on*/
+/*need to figure out how to animate this transition*/
+.top-panel {
+    order:1;
+    height: 75px;
+    width: 75px;
+    transition: all 1s;
+}
+.bottom-panel {
+    order:3;
+    height: 75px;
+    width: 75px;
+    transition: all 1s;
+}
+
+.chosen-panel {
+    width: 100%;
+    height:300px;
+    order: 2;
+    transition: all 1s;
+
+}
+
+
+/*some borders for debugging*/
+.half-areas div{
+    border: solid green;
 }
