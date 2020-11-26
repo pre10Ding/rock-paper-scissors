@@ -1,23 +1,21 @@
-#score {
-    display: grid; 
-    grid-template-columns: 40px 20px 50px 20px; 
-    margin-bottom: 30px;
-}
 
-#start {
-    display:flex;
-    font-size: 30px;
-    color:white;
-    background-color: green;
+:root {
+    --dark-orange: #e76f51;
+    --orange: #f4a261;
+    --yellow: #e9c46a;
+    --cyan: #2a9d8f;
+    --dark-blue: #264653;
 }
 
 #game-area {
+    color:var(--dark-blue);
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap:10px;
     width:600px;
-    margin: 0 auto 0 auto;
-    border: solid black;
+    margin: 1vh auto 0 auto;
+    border: solid var(--cyan);
+    background: var(--yellow);
 }
 
 .half-areas div{
@@ -29,8 +27,38 @@
     grid-template-rows:100px 350px 150px;
 }
 
+#interactive-button {
+    position: relative;
+    margin-top: 4px;
+    margin-bottom: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size:2em;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 60px;
+    background: var(--yellow);
+    padding: 10px 10px 10px 10px;
+    border:solid 10px var(--cyan);
+}
+
+.interactive-button-button {
+    box-shadow: 0px 5px 0px 3px var(--dark-orange);
+}
+
+.interactive-button-button:hover {
+    box-shadow: 0px 5px 0px 3px  var(--orange);
+}
+
+.interactive-button-button:active {
+    top: 3px;   
+    box-shadow: 0px 2px 0px 3px  var(--orange);
+}
+
+
 #cpu-panel {
     position: relative;
+    margin-top:0;
     bottom:-45px;
     width:100%;
     height: 300px;
@@ -47,6 +75,7 @@
     display:grid;
     grid-template-rows: 1fr 1fr 3fr;
     grid-gap:0;
+    margin-top:20px;
 }
 
 #cpu-label div{
@@ -58,13 +87,13 @@
 
 #scoreboard-header {
     display: grid;
-    grid-template-columns: 2fr 1fr 2fr;
+    grid-template-columns: 2fr 10px 2fr;
 }
 
 #scoreboard {
     display: grid;
     grid-column-gap: px;
-    grid-template-columns: 2fr 1fr 2fr;
+    grid-template-columns: 2fr 10px 2fr;
     
 }
 
@@ -80,10 +109,17 @@
 }
 
 .player-panel {
+    position: relative;
     height: 75px;
     width: 75px;
     margin: 20px 20px 20px 20px;
-    background:black;
+}
+
+.player-panel:active {
+    width:65px;
+    height:65px;
+    margin-top:25px;
+    margin-bottom: 25px;
 }
 
 .player-panel:hover {
@@ -114,9 +150,14 @@
 
 }
 
+.chosen-panel:active {
+    width:150px;
+    height:150px;
+}
+
 
 
 /*some borders for debugging*/
-.half-areas *{
+/* .half-areas *{
     border: solid green;
-}
+} */
